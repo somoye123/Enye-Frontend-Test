@@ -1,5 +1,12 @@
+import React from 'react';
+import ProfileList from './components/profileList';
+
 function App() {
-  return <h1>somoye</h1>;
+  return (
+    <main>
+      <ProfileList />
+    </main>
+  );
 }
 
 export default App;
