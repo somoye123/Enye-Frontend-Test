@@ -9,7 +9,7 @@ function ProfileList({ Profiles, Loading, RawProfiles, categoryFilter }) {
   const [page, setPage] = useState(0);
   const [profiles, setProfiles] = useState([]);
 
-  const handleFilterChange = (e) => categoryFilter(e.target.value);
+  const handleFilterChange = (e) => categoryFilter(RawProfiles, e.target.value);
 
   useEffect(() => {
     if (Loading) return;
@@ -44,7 +44,7 @@ function ProfileList({ Profiles, Loading, RawProfiles, categoryFilter }) {
       <div className="section-title">
         <h1>{Loading ? 'loading...' : 'Paginated Profiles'}</h1>
         <div className="underline"></div>
-        <CategoryFilter handleFilterChange={handleFilterChange} />
+        {!Loading && <CategoryFilter handleFilterChange={handleFilterChange} />}
       </div>
       <section className="followers">
         <div className="container">
