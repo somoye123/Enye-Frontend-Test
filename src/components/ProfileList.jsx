@@ -95,4 +95,9 @@ const mapStateToProps = ({ Profiles, Loading, RawProfiles }) => ({
   RawProfiles,
 });
 
-export default connect(mapStateToProps)(ProfileList);
+const mapDispatchToProps = (dispatch) => ({
+  categoryFilter: (RawProfile, category) =>
+    dispatch(CategoryFilterAction(RawProfile, category)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileList);
