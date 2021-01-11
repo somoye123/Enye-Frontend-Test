@@ -41,6 +41,7 @@ function ProfileList({ Profiles, Loading }) {
       <div className="section-title">
         <h1>{Loading ? 'loading...' : 'Paginated Profiles'}</h1>
         <div className="underline"></div>
+        <CategoryFilter handleFilterChange={handleFilterChange} />
       </div>
       <section className="followers">
         <div className="container">
