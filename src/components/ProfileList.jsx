@@ -3,10 +3,13 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import CategoryFilter from './CategoryFilter';
 import Profile from './Profile';
+import CategoryFilterAction from '../redux/actions/filterAction';
 
 function ProfileList({ Profiles, Loading }) {
   const [page, setPage] = useState(0);
   const [profiles, setProfiles] = useState([]);
+
+  const handleFilterChange = (e) => categoryFilter(e.target.value);
 
   useEffect(() => {
     if (Loading) return;
@@ -84,9 +87,10 @@ ProfileList.propTypes = {
   Loading: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ Profiles, Loading }) => ({
+const mapStateToProps = ({ Profiles, Loading, RawProfiles }) => ({
   Profiles,
   Loading,
+  RawProfiles,
 });
 
 export default connect(mapStateToProps)(ProfileList);
