@@ -5,7 +5,7 @@ import CategoryFilter from './CategoryFilter';
 import Profile from './Profile';
 import CategoryFilterAction from '../redux/actions/filterAction';
 
-function ProfileList({ Profiles, Loading }) {
+function ProfileList({ Profiles, Loading, RawProfiles }) {
   const [page, setPage] = useState(0);
   const [profiles, setProfiles] = useState([]);
 
