@@ -80,6 +80,7 @@ function ProfileList({ Profiles, Loading }) {
 
 ProfileList.defaultProps = {
   Profiles: null,
+  RawProfiles: null,
 };
 
 ProfileList.propTypes = {
