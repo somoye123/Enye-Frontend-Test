@@ -84,6 +84,7 @@ ProfileList.defaultProps = {
 
 ProfileList.propTypes = {
   Profiles: PropTypes.arrayOf(PropTypes.array) || null,
+  RawProfiles: PropTypes.arrayOf(PropTypes.object) || null,
   Loading: PropTypes.bool.isRequired,
 };
 
