@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import CategoryFilter from './CategoryFilter';
 import Profile from './Profile';
 
 function ProfileList({ Profiles, Loading }) {
