@@ -1,7 +1,14 @@
-import React from 'react';
-import ProfileList from './components/profileList';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import ProfileList from './components/ProfileList';
+import getProfiles from './redux/actions/profilesAction';
 
-function App() {
+function App({ getProfiles }) {
+  useEffect(() => {
+    getProfiles();
+  }, [getProfiles]);
+
   return (
     <main>
       <ProfileList />
@@ -9,4 +16,10 @@ function App() {
   );
 }
 
-export default App;
+App.propTypes = {
+  getProfiles: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = { getProfiles };
+
+export default connect(null, mapDispatchToProps)(App);
