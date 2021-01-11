@@ -14,7 +14,7 @@ function ProfileList({ Profiles, Loading, RawProfiles, categoryFilter }) {
   useEffect(() => {
     if (Loading) return;
     setProfiles(Profiles[page]);
-  }, [Loading, page]);
+  }, [Loading, page, Profiles]);
 
   const nextPage = () => {
     setPage((oldPage) => {
