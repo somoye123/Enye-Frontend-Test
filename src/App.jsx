@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ProfileList from './components/ProfileList';
 import getProfiles from './redux/actions/profilesAction';
-
+import SearchForm from './components/SearchForm';
 function App({ getProfiles }) {
   useEffect(() => {
     getProfiles();
@@ -11,6 +11,7 @@ function App({ getProfiles }) {
 
   return (
     <main>
+      <SearchForm />
       <ProfileList />
     </main>
   );
