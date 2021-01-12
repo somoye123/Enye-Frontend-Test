@@ -5,13 +5,7 @@ import CategoryFilter from './CategoryFilter';
 import Profile from './Profile';
 import CategoryFilterAction from '../redux/actions/filterAction';
 
-function ProfileList({
-  SearchTerm,
-  Profiles,
-  Loading,
-  RawProfiles,
-  categoryFilter,
-}) {
+function ProfileList({ Profiles, Loading, RawProfiles, categoryFilter }) {
   const [page, setPage] = useState(0);
   const [profiles, setProfiles] = useState([]);
 
@@ -20,7 +14,7 @@ function ProfileList({
   useEffect(() => {
     if (Loading) return;
     setProfiles(Profiles[page]);
-  }, [Loading, page, Profiles, SearchTerm]);
+  }, [Loading, page, Profiles]);
 
   const nextPage = () => {
     setPage((oldPage) => {
@@ -95,11 +89,10 @@ ProfileList.propTypes = {
   categoryFilter: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ SearchTerm, Profiles, Loading, RawProfiles }) => ({
+const mapStateToProps = ({ Profiles, Loading, RawProfiles }) => ({
   Profiles,
   Loading,
   RawProfiles,
-  SearchTerm,
 });
 
 const mapDispatchToProps = (dispatch) => ({
