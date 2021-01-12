@@ -42,8 +42,7 @@ function ProfileList({ Profiles, Loading, RawProfiles, categoryFilter }) {
   return (
     <>
       <div className="section-title">
-        <h1>{Loading ? 'loading...' : 'Paginated Profiles'}</h1>
-        <div className="underline"></div>
+        {Loading && <h1>loading...</h1>}
         {!Loading && <CategoryFilter handleFilterChange={handleFilterChange} />}
       </div>
       <section className="followers">
