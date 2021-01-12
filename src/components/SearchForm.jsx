@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SearchTerm from '../redux/actions/searchTermAction';
 
-export const SearchForm = ({ setSearchTerm }) => {
+export const SearchForm = ({ setSearchTerm, RawProfiles }) => {
   const searchValue = React.useRef('');
   React.useEffect(() => {
     searchValue.current.focus();
   }, []);
 
-  const handleChange = () => setSearchTerm(searchValue.current.value);
+  const handleChange = () =>
+    setSearchTerm(RawProfiles, searchValue.current.value);
 
   const handleSubmit = (e) => e.preventDefault();
 
@@ -33,12 +34,19 @@ export const SearchForm = ({ setSearchTerm }) => {
   );
 };
 
+SearchForm.defaultProps = {
+  RawProfiles: null,
+};
+
 SearchForm.propTypes = {
   setSearchTerm: PropTypes.func.isRequired,
+  RawProfiles: PropTypes.arrayOf(PropTypes.object) || null,
 };
+
+const mapStateToProps = ({ RawProfiles }) => ({ RawProfiles });
 
 const mapDispatchToProps = (dispatch) => ({
   setSearchTerm: (term) => dispatch(SearchTerm(term)),
 });
 
-export default connect(null, mapDispatchToProps)(SearchForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
