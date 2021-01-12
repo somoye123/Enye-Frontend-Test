@@ -89,10 +89,11 @@ ProfileList.propTypes = {
   categoryFilter: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ Profiles, Loading, RawProfiles }) => ({
+const mapStateToProps = ({ SearchTerm, Profiles, Loading, RawProfiles }) => ({
   Profiles,
   Loading,
   RawProfiles,
+  SearchTerm,
 });
 
 const mapDispatchToProps = (dispatch) => ({
