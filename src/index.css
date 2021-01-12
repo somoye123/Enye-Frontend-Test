@@ -172,7 +172,6 @@ Pagination
 }
 
 .section-title select {
-  margin-top: 2rem;
   width: 25vw;
   padding: 0.5rem;
 }
@@ -180,7 +179,7 @@ Pagination
 .followers {
   width: 90vw;
   max-width: var(--max-width);
-  margin: 5rem auto;
+  margin: 3rem auto;
 }
 .container {
   display: grid;
