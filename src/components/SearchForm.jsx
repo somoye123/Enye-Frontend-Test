@@ -46,7 +46,7 @@ SearchForm.propTypes = {
 const mapStateToProps = ({ RawProfiles }) => ({ RawProfiles });
 
 const mapDispatchToProps = (dispatch) => ({
-  setSearchTerm: (term) => dispatch(SearchTerm(term)),
+  setSearchTerm: (rawProfiles, term) => dispatch(SearchTerm(rawProfiles, term)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
