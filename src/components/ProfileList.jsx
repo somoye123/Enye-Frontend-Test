@@ -39,6 +39,12 @@ function ProfileList({ Profiles, Loading, RawProfiles, categoryFilter }) {
     setPage(index);
   };
 
+  if (!profiles) {
+    return (
+      <h2 className="section-title">no patient matched your search criteria</h2>
+    );
+  }
+
   return (
     <>
       <div className="section-title">
